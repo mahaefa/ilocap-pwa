@@ -154,13 +154,44 @@ export default function DiagnosticPage() {
   // ============================================
   if (step === "declencheur") {
     const options = [
-      { label: "Moins de temps a chercher des infos ou recopier des donnees", profil: "solo" as ProfilType, icon: "📋" },
-      { label: "Moins de rendez-vous manques ou de relances a faire", profil: "solo" as ProfilType, icon: "📞" },
-      { label: "Moins de temps a preparer des devis, rapports, propositions", profil: "croissance" as ProfilType, icon: "📄" },
-      { label: "Plus de clients qui me trouvent et me contactent sans effort", profil: "solo" as ProfilType, icon: "🎯" },
-      { label: "Des decisions plus rapides basees sur des chiffres fiables", profil: "mature" as ProfilType, icon: "📊" },
-      { label: "Moins de reunions et plus de coordination automatique", profil: "croissance" as ProfilType, icon: "🔄" },
-      { label: "Industrialiser ce que je fais deja bien pour deployer a grande echelle", profil: "mature" as ProfilType, icon: "🏭" }
+      { label: "Moins de temps a chercher des infos ou recopier des donnees", profil: "solo" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M9 5H7a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h0a2 2 0 012 2M9 5h4M7 10h6M7 13h4"/>
+        </svg>
+      )},
+      { label: "Moins de rendez-vous manques ou de relances a faire", profil: "solo" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="3" y="4" width="14" height="13" rx="2"/><path d="M7 2v3M13 2v3M3 9h14"/>
+        </svg>
+      )},
+      { label: "Moins de temps a preparer des devis, rapports, propositions", profil: "croissance" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M4 4h12v2H4zM4 9h8M4 13h6M14 11l2 2 4-4"/>
+        </svg>
+      )},
+      { label: "Plus de clients qui me trouvent et me contactent sans effort", profil: "solo" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <circle cx="9" cy="9" r="6"/><path d="M15 15l3 3"/>
+        </svg>
+      )},
+      { label: "Des decisions plus rapides basees sur des chiffres fiables", profil: "mature" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="3" y="12" width="2.5" height="5" rx="0.5" fill="currentColor" stroke="none"/>
+          <rect x="8.5" y="8" width="2.5" height="9" rx="0.5" fill="currentColor" stroke="none"/>
+          <rect x="14" y="4" width="2.5" height="13" rx="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      )},
+      { label: "Moins de reunions et plus de coordination automatique", profil: "croissance" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M10 4a6 6 0 016 6M10 4a6 6 0 00-6 6"/><path d="M4 10a6 6 0 006 6M16 10a6 6 0 01-6 6"/>
+          <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+      )},
+      { label: "Industrialiser ce que je fais deja bien pour deployer a grande echelle", profil: "mature" as ProfilType, icon: (
+        <svg className="w-5 h-5 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M2 16V9l4-4v4l4-4v4l4-4v11H2z"/><path d="M2 16h16"/>
+        </svg>
+      )}
     ];
 
     return (
@@ -189,10 +220,10 @@ export default function DiagnosticPage() {
               <button
                 key={idx}
                 onClick={() => handleDeclencheur(option.profil)}
-                className="w-full text-left p-5 md:p-6 bg-white border border-[#E5E5E5] hover:border-[#B89A5A] hover:shadow-md transition-all duration-300 group flex items-center gap-5 rounded-sm"
+                className="w-full text-left p-4 md:p-5 bg-white border border-[#E5E5E5] hover:border-[#B89A5A] hover:shadow-md transition-all duration-300 group flex items-center gap-4 rounded-sm"
               >
-                <span className="text-2xl flex-shrink-0">{option.icon}</span>
-                <span className="font-[family-name:var(--font-manrope)] text-sm md:text-base text-[#073642]/80 group-hover:text-[#073642] transition-colors">
+                <span className="flex-shrink-0">{option.icon}</span>
+                <span className="font-[family-name:var(--font-manrope)] text-sm text-[#073642]/80 group-hover:text-[#073642] transition-colors">
                   {option.label}
                 </span>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-auto text-[#073642]/20 group-hover:text-[#B89A5A] transition-colors flex-shrink-0">
@@ -500,7 +531,14 @@ export default function DiagnosticPage() {
               onClick={handleDownloadPDF}
               className="flex-1 bg-[#073642] text-[#F3F1EC] py-5 font-[family-name:var(--font-sora)] text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-opacity-90 transition-all rounded-sm"
             >
-              {pdfDownloaded ? "✓ PDF telecharge" : "Telecharger ma feuille de route (PDF)"}
+            {pdfDownloaded ? (
+              <span className="flex items-center justify-center gap-2">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12l5 5L20 7" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                PDF telecharge
+              </span>
+            ) : "Telecharger ma feuille de route (PDF)"}
             </button>
             <button
               onClick={() => setStep("contact")}
@@ -614,8 +652,11 @@ export default function DiagnosticPage() {
             </div>
 
             {submitError && (
-              <div className="mb-4 p-4 border border-red-300 bg-red-50 text-red-600 font-[family-name:var(--font-manrope)] text-sm rounded-sm">
-                ⚠️ {submitError}
+              <div className="mb-4 p-4 border border-red-300 bg-red-50 text-red-600 font-[family-name:var(--font-manrope)] text-sm rounded-sm flex items-start gap-2">
+                <svg className="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M10 3L2 17h16L10 3z"/><path d="M10 9v4M10 15v1" strokeLinecap="round"/>
+                </svg>
+                {submitError}
               </div>
             )}
 
@@ -624,7 +665,14 @@ export default function DiagnosticPage() {
               disabled={!leadForm.nom || !leadForm.email || !leadForm.optIn || isSubmitting}
               className="w-full bg-[#B89A5A] text-[#0B0C0A] py-5 font-[family-name:var(--font-manrope)] text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-[#073642] hover:text-[#F3F1EC] transition-all disabled:opacity-30 disabled:cursor-not-allowed rounded-sm"
             >
-              {isSubmitting ? "⏳ Envoi en cours..." : "GENERER MA FEUILLE DE ROUTE →"}
+              {isSubmitting ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" strokeOpacity="0.25"/><path d="M12 2a10 10 0 0110 10" strokeLinecap="round"/>
+                  </svg>
+                  Envoi en cours...
+                </span>
+              ) : "GENERER MA FEUILLE DE ROUTE →"}
             </button>
 
             <div className="text-center mt-6">
@@ -656,7 +704,9 @@ export default function DiagnosticPage() {
           className="bg-white p-10 border border-[#E5E5E5] rounded-sm space-y-6"
         >
           <div className="w-20 h-20 bg-[#B89A5A]/10 flex items-center justify-center mx-auto rounded-full">
-            <span className="text-[#B89A5A] text-3xl">✓</span>
+            <svg className="w-10 h-10 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12l5 5L20 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
           <h3 className="font-[family-name:var(--font-sora)] text-2xl text-[#073642]">
             Votre feuille de route est en route

@@ -26,7 +26,7 @@ export default function Methodologie() {
     <section id="methodologie" className="py-32 bg-[#F3F1EC]">
       <div className="px-gutter max-w-[1440px] mx-auto">
         <div className="mb-20">
-          <h2 className="font-sora text-4xl md:text-5xl uppercase mb-6 text-petrol">
+          <h2 className="font-sora text-2xl md:text-4xl uppercase mb-6 text-petrol">
             Notre Approche
           </h2>
           <div className="h-[2px] w-32 bg-gold" />

@@ -39,8 +39,17 @@ export default function CookieBanner() {
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center gap-6">
           
           <div className="flex-1">
-            <p className="font-[family-name:var(--font-sora)] text-sm text-[#F3F1EC] mb-2">
-              🍪 Gestion des cookies
+            <p className="font-[family-name:var(--font-sora)] text-sm text-[#F3F1EC] mb-2 flex items-center gap-2">
+              {/* Icône cookie */}
+              <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="10" cy="10" r="8"/>
+                <circle cx="7" cy="8" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="8" cy="13" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="13" cy="12" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="10.5" cy="10.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+              Gestion des cookies
             </p>
             <p className="font-[family-name:var(--font-manrope)] text-xs text-[#F3F1EC]/60 leading-relaxed">
               Nous utilisons des cookies essentiels au fonctionnement du site et des cookies analytiques (Google Analytics) pour comprendre comment vous utilisez nos services.{" "}

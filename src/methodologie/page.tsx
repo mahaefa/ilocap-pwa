@@ -8,22 +8,42 @@ const LEVIERS = [
   {
     title: "Dominer votre marche",
     description: "Creer une identite magnetique pour capturer l'attention de vos cibles et vous demarquer durablement.",
-    icon: "🎯"
+    icon: (
+      <svg className="w-7 h-7 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+        <path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
+      </svg>
+    )
   },
   {
     title: "Exceller operationnellement",
     description: "Automatisez vos taches chronophages pour vous concentrer sur vos priorites strategiques.",
-    icon: "⚡"
+    icon: (
+      <svg className="w-7 h-7 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" strokeLinejoin="round"/>
+      </svg>
+    )
   },
   {
     title: "Affirmer votre valeur",
     description: "Communiquez clairement vos engagements et votre caractere unique pour creer du lien.",
-    icon: "💎"
+    icon: (
+      <svg className="w-7 h-7 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+      </svg>
+    )
   },
   {
     title: "Mesurer pour progresser",
     description: "Pilotez par la donnee pour optimiser chaque decision et chaque investissement.",
-    icon: "📊"
+    icon: (
+      <svg className="w-7 h-7 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="14" width="3" height="7" rx="0.5" fill="currentColor" stroke="none"/>
+        <rect x="10.5" y="9" width="3" height="12" rx="0.5" fill="currentColor" stroke="none"/>
+        <rect x="17" y="4" width="3" height="17" rx="0.5" fill="currentColor" stroke="none"/>
+        <path d="M4 11l5-5 5 4 5-6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    )
   }
 ];
 
@@ -160,7 +180,7 @@ export default function MethodologiePage() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-[#F5F3EE] border border-[#E5E5E5] p-8 hover:border-[#B89A5A] transition-all duration-300 rounded-sm"
               >
-                <div className="text-3xl mb-4">{levier.icon}</div>
+                <div className="text-[#B89A5A] mb-4">{levier.icon}</div>
                 <h3 className="font-[family-name:var(--font-sora)] text-lg uppercase tracking-widest mb-3 text-[#073642]">
                   {levier.title}
                 </h3>

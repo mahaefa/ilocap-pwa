@@ -62,7 +62,9 @@ export default function ContactPage() {
                   className="bg-white border border-[#E5E5E5] p-10 text-center rounded-sm"
                 >
                   <div className="w-16 h-16 bg-[#B89A5A]/10 flex items-center justify-center mx-auto mb-6 rounded-full">
-                    <span className="text-[#B89A5A] text-2xl">✓</span>
+                    <svg className="w-8 h-8 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12l5 5L20 7" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                   <h3 className="font-[family-name:var(--font-sora)] text-xl uppercase mb-4 text-[#073642]">
                     Message envoye

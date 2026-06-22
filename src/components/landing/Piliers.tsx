@@ -21,7 +21,7 @@ export default function Piliers() {
     <section className="py-32 bg-[#F3F1EC] relative">
       <div className="px-gutter max-w-[1440px] mx-auto">
         <div className="mb-20">
-          <h2 className="font-sora text-4xl md:text-5xl uppercase mb-6 text-petrol">
+          <h2 className="font-sora text-2xl md:text-4xl uppercase mb-6 text-petrol">
             Nos Piliers Structurants
           </h2>
           <div className="h-[2px] w-32 bg-gold" />
@@ -31,7 +31,7 @@ export default function Piliers() {
           {piliers.map((pilier, index) => (
             <div
               key={pilier.title}
-              className={`p-16 hover:bg-[#E8E4DC] transition-standard group ${
+              className={`p-8 md:p-12 hover:bg-[#E8E4DC] transition-standard group ${
                 index < 2 ? "border-b md:border-b-0 md:border-r border-petrol/15" : ""
               }`}
             >

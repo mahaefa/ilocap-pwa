@@ -15,7 +15,13 @@ const PILIERS = [
     subtitle: "Intelligence decisionnelle",
     description: "Transformez vos donnees en levier strategique. Anticipez, decidez, optimisez.",
     color: "#B89A5A",
-    icon: "🧠",
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2a5 5 0 0 1 5 5c0 1.5-.6 2.8-1.5 3.8L17 13h2a2 2 0 0 1 2 2v5H3v-5a2 2 0 0 1 2-2h2l1.5-2.2A5 5 0 0 1 12 2z"/>
+        <circle cx="12" cy="7" r="2"/>
+        <path d="M8 17v-2m4 2v-4m4 4v-2"/>
+      </svg>
+    ),
     services: [
       "Analyse predictive & tendances marche",
       "Automatisation du service client (chatbots, NLP)",
@@ -28,7 +34,12 @@ const PILIERS = [
     subtitle: "Infrastructure sur mesure",
     description: "Des outils performants, securises et adaptes a vos processus metier.",
     color: "#073642",
-    icon: "🖥️",
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="2" y="3" width="20" height="14" rx="2"/>
+        <path d="M8 21h8M12 17v4"/>
+      </svg>
+    ),
     services: [
       "Outils metiers personnalises (web & mobile)",
       "Extranets collaboratifs securises",
@@ -42,7 +53,13 @@ const PILIERS = [
     subtitle: "Visibilite & conversion",
     description: "Devenez incontournable. Attirez, convertissez, fidelisez.",
     color: "#2A5A5F",
-    icon: "🎨",
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+        <path d="M7.8 7.8l2.1 2.1M14.1 14.1l2.1 2.1M7.8 16.2l2.1-2.1M14.1 9.9l2.1-2.1"/>
+      </svg>
+    ),
     services: [
       "Graphisme, identite visuelle & contenus",
       "Publicite ciblee (Google, Meta, LinkedIn)",
@@ -56,7 +73,12 @@ const PILIERS = [
     subtitle: "Efficience operationnelle",
     description: "Externalisez et automatisez pour vous concentrer sur l'essentiel.",
     color: "#C0392B",
-    icon: "⚙️",
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    ),
     services: [
       "Processus intelligents & RPA",
       "Support client 24/7 multilingue",
@@ -70,7 +92,13 @@ const PILIERS = [
     subtitle: "Transaction securisee",
     description: "Conception et integration de solutions de paiement conformes et securisees.",
     color: "#E67E22",
-    icon: "🏦",
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="2" y="5" width="20" height="14" rx="2"/>
+        <path d="M2 10h20"/>
+        <path d="M6 15h4M14 15h4"/>
+      </svg>
+    ),
     services: [
       "Conception de moyens de paiement",
       "Integration passerelles (Stripe, PayPal, mobile money)",
@@ -274,10 +302,14 @@ function DiagnosticWidget() {
       >
         <button
           onClick={openWidget}
-          className="bg-white border border-[#B89A5A] widget-elegant hover:widget-elegant-hover transition-all duration-300 p-6 w-[200px] group"
+          className="bg-white border border-[#B89A5A] widget-elegant hover:widget-elegant-hover transition-all duration-300 p-4 w-[180px] group"
         >
           <div className="text-center">
-            <div className="text-3xl mb-2">🎯</div>
+            {/* Icône diagnostic */}
+            <svg className="w-7 h-7 mx-auto mb-2 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M7 13l3-4 3 4 3-6"/>
+            </svg>
             <p className="font-[family-name:var(--font-sora)] text-xs uppercase tracking-wider text-[#073642] mb-1">
               Diagnostic
             </p>
@@ -346,20 +378,50 @@ function DiagnosticWidget() {
                   Qu'est-ce qui vous ferait gagner 2 heures aujourd'hui ?
                 </p>
                 {[
-                  { label: "Moins de temps a chercher des infos", profil: "solo" as ProfilType, icon: "📋" },
-                  { label: "Moins de rendez-vous manques", profil: "solo" as ProfilType, icon: "📞" },
-                  { label: "Moins de temps a preparer des devis", profil: "croissance" as ProfilType, icon: "📄" },
-                  { label: "Plus de clients qui me trouvent", profil: "solo" as ProfilType, icon: "🎯" },
-                  { label: "Des decisions plus rapides", profil: "mature" as ProfilType, icon: "📊" },
-                  { label: "Moins de reunions", profil: "croissance" as ProfilType, icon: "🔄" },
-                  { label: "Industrialiser ce que je fais", profil: "mature" as ProfilType, icon: "🏭" }
+                  { label: "Moins de temps a chercher des infos", profil: "solo" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M9 5H7a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h0a2 2 0 012 2M9 5h4M7 10h6M7 13h4"/>
+                    </svg>
+                  )},
+                  { label: "Moins de rendez-vous manques", profil: "solo" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="3" y="4" width="14" height="13" rx="2"/><path d="M7 2v3M13 2v3M3 9h14"/>
+                    </svg>
+                  )},
+                  { label: "Moins de temps a preparer des devis", profil: "croissance" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M4 4h12v2H4zM4 9h8M4 13h6M14 11l2 2 4-4"/>
+                    </svg>
+                  )},
+                  { label: "Plus de clients qui me trouvent", profil: "solo" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="9" cy="9" r="6"/><path d="M15 15l3 3"/>
+                    </svg>
+                  )},
+                  { label: "Des decisions plus rapides", profil: "mature" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="3" y="12" width="3" height="5" rx="0.5" fill="currentColor" stroke="none"/>
+                      <rect x="8.5" y="8" width="3" height="9" rx="0.5" fill="currentColor" stroke="none"/>
+                      <rect x="14" y="4" width="3" height="13" rx="0.5" fill="currentColor" stroke="none"/>
+                    </svg>
+                  )},
+                  { label: "Moins de reunions", profil: "croissance" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M4 10a6 6 0 0112 0"/><path d="M10 4v2M10 14v2M4.93 6.93l1.41 1.41M13.66 13.66l1.41 1.41"/>
+                    </svg>
+                  )},
+                  { label: "Industrialiser ce que je fais", profil: "mature" as ProfilType, icon: (
+                    <svg className="w-4 h-4 flex-shrink-0 text-[#B89A5A]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M2 16V9l4-4v4l4-4v4l4-4v11H2z"/><path d="M2 16h16"/>
+                    </svg>
+                  )}
                 ].map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleDeclencheur(option.profil)}
                     className="w-full text-left p-3 border border-[#E5E5E5] hover:border-[#B89A5A] hover:bg-[#F5F3EE] transition-all widget-option flex items-center gap-3 group"
                   >
-                    <span className="text-lg">{option.icon}</span>
+                    <span className="text-[#B89A5A]">{option.icon}</span>
                     <span className="font-[family-name:var(--font-manrope)] text-xs text-[#073642]/70 group-hover:text-[#073642]">
                       {option.label}
                     </span>
@@ -543,7 +605,9 @@ function DiagnosticWidget() {
             {step === "confirmation" && (
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 bg-[#B89A5A]/10 widget-avatar flex items-center justify-center mx-auto">
-                  <span className="text-[#B89A5A] text-2xl">✓</span>
+                  <svg className="w-8 h-8 text-[#B89A5A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12l5 5L20 7" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
                 <p className="font-[family-name:var(--font-sora)] text-sm uppercase text-[#073642]">
                   Feuille de route envoyee
@@ -603,7 +667,7 @@ export default function ServicesPage() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white border border-[#E5E5E5] p-8 hover:border-[#B89A5A] hover:shadow-md transition-all duration-300 rounded-sm"
               >
-                <div className="text-3xl mb-4">{pilier.icon}</div>
+                <div className="text-[#B89A5A] mb-4">{pilier.icon}</div>
                 <h3 className="font-[family-name:var(--font-sora)] text-lg uppercase tracking-widest mb-2 text-[#073642]">
                   {pilier.title}
                 </h3>

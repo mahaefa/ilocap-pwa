@@ -33,14 +33,14 @@ export default function Hero() {
             
             {/* Titre avec accent visuel */}
             <div className="relative">
-              <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl uppercase leading-[1.05] text-[#073642]">
+              <h1 className="font-sora text-3xl md:text-4xl lg:text-5xl uppercase leading-[1.05] text-[#073642]">
                 Le sens au centre de votre <span className="text-[#B89A5A]">transformation</span>
               </h1>
               {/* Ligne décorative sous le titre */}
               <div className="mt-4 w-24 h-[2px] bg-[#B89A5A]" />
             </div>
             
-            <p className="font-manrope text-xl md:text-2xl max-w-xl text-black/70 font-light">
+            <p className="font-manrope text-base md:text-lg max-w-xl text-black/70 font-light">
               Construire ce qui dure. Transformer ce qui compte.
             </p>
             
@@ -50,14 +50,14 @@ export default function Hero() {
                 href="https://calendly.com/candriatiana/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#073642] text-white px-8 py-4 font-manrope text-xs uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:shadow-lg hover:shadow-[#B89A5A]/20 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
+                className="bg-[#073642] text-white px-6 py-3 font-manrope text-xs uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:shadow-lg hover:shadow-[#B89A5A]/20 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               >
                 Prendre RDV (30 min)
               </Link>
               
               <Link 
                 href="#expertises"
-                className="border border-[#B89A5A] text-[#073642] bg-white/40 backdrop-blur-sm px-8 py-4 font-manrope text-xs uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:text-white hover:shadow-lg hover:shadow-[#B89A5A]/20 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
+                className="border border-[#B89A5A] text-[#073642] bg-white/40 backdrop-blur-sm px-6 py-3 font-manrope text-xs uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:text-white hover:shadow-lg hover:shadow-[#B89A5A]/20 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               >
                 Explorer nos solutions
               </Link>
