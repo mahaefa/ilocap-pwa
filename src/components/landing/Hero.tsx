@@ -4,68 +4,71 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-36 pb-20 overflow-hidden">
-      {/* === FOND SOLIDE IVOIRE — masque la transparence === */}
-      <div className="absolute inset-0 bg-[#F5F3EE] pointer-events-none" />
+    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-[#F3F1EC]">
       
-      {/* === FOND_OR.PNG — fond avec fusion douce === */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url('/fond_or.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          mixBlendMode: 'multiply'
-        }}
-      />
-      
-      {/* Overlay léger pour harmoniser */}
-      <div className="absolute inset-0 bg-[#F5F3EE]/20 pointer-events-none" />
-      
-      {/* Dégradé gauche pour lisibilité du texte */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F3EE]/90 via-[#F5F3EE]/50 to-transparent pointer-events-none" />
-      
-      {/* Dégradé haut pour adoucir */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F5F3EE]/70 via-transparent to-transparent pointer-events-none" />
+      {/* === FORME GÉOMÉTRIQUE FANTÔME === */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 -translate-x-1/2 pointer-events-none opacity-[0.03]">
+        <svg width="600" height="600" viewBox="0 0 200 200" fill="none">
+          <path d="M100 20L160 40L180 100L160 160L100 180L40 160L20 100L40 40Z" stroke="#073642" strokeWidth="0.5"/>
+          <path d="M100 40L140 55L155 100L140 145L100 160L60 145L45 100L60 55Z" stroke="#073642" strokeWidth="0.3"/>
+        </svg>
+      </div>
+
+      {/* === SÉPARATION SUBTILE HEADER/HERO === */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#073642]/10 to-transparent" />
       
       <div className="px-gutter max-w-[1440px] mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col items-start gap-10">
-            <div className="inline-block border-l-4 border-[#B89A5A] pl-4">
-              <span className="font-manrope text-[15px] uppercase text-[#073642] tracking-[0.2em] font-bold">
-                Conseil en Strategie et Transformation
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          
+          {/* Colonne gauche */}
+          <div className="flex flex-col items-start gap-6">
+            
+            {/* Label avec ligne de connexion */}
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-px bg-[#B89A5A]" />
+              <span className="font-manrope text-[13px] uppercase text-[#073642] tracking-[0.2em] font-bold">
+                CONSEIL EN STRATÉGIE & DIGITAL
               </span>
             </div>
             
-            <h1 className="font-sora text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.05] text-[#073642]">
-              Le sens au centre de votre <span className="text-[#B89A5A]">transformation</span>
-            </h1>
+            {/* Titre avec accent visuel */}
+            <div className="relative">
+              <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl uppercase leading-[1.05] text-[#073642]">
+                Le sens au centre de votre <span className="text-[#B89A5A]">transformation</span>
+              </h1>
+              {/* Ligne décorative sous le titre */}
+              <div className="mt-4 w-24 h-[2px] bg-[#B89A5A]" />
+            </div>
             
-            <p className="font-manrope text-2xl md:text-3xl max-w-2xl text-black font-light">
+            <p className="font-manrope text-xl md:text-2xl max-w-xl text-black/70 font-light">
               Construire ce qui dure. Transformer ce qui compte.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 mt-8 w-full sm:w-auto">
+            {/* CTAs avec ombre */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
               <Link 
-                href="/diagnostic"
-                className="bg-[#073642] text-white px-14 py-7 font-manrope text-sm uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] transition-standard flex items-center justify-center gap-3"
+                href="https://calendly.com/candriatiana/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#073642] text-white px-8 py-4 font-manrope text-xs uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:shadow-lg hover:shadow-[#B89A5A]/20 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               >
-                Faire mon diagnostic
-                <span>→</span>
+                Prendre RDV (30 min)
               </Link>
+              
               <Link 
-                href="/diagnostic"
-                className="border border-[#B89A5A] text-[#073642] bg-white/40 backdrop-blur-sm px-14 py-7 font-manrope text-sm uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:text-white transition-standard flex items-center justify-center gap-3"
+                href="#expertises"
+                className="border border-[#B89A5A] text-[#073642] bg-white/40 backdrop-blur-sm px-8 py-4 font-manrope text-xs uppercase font-bold tracking-[0.2em] hover:bg-[#B89A5A] hover:text-white hover:shadow-lg hover:shadow-[#B89A5A]/20 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               >
-                Simulateur ROI
-                <span>↗</span>
+                Explorer nos solutions
               </Link>
             </div>
           </div>
           
-          <div className="hidden lg:flex justify-end items-center relative">
+          {/* Colonne droite : logo avec halo */}
+          <div className="hidden lg:flex justify-center items-center relative pl-8">
             <div className="relative w-full max-w-[400px] flex items-center justify-center">
+              {/* Halo subtil derrière le logo */}
+              <div className="absolute inset-0 bg-[#B89A5A]/5 rounded-full blur-3xl scale-150" />
               <img 
                 src="/Logo_ilocap_icon_rm.png" 
                 alt="ILOCAP Icon" 

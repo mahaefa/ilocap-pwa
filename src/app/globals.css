@@ -15,8 +15,8 @@
 }
 
 * {
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 body {
@@ -81,4 +81,61 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-pulse-glow {
   animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* ============================================
+   CLASSES WIDGET DIAGNOSTIC - Mode elegant
+   ============================================ */
+
+.widget-elegant {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+.widget-elegant-hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+}
+
+.widget-panel {
+  border-radius: 0 !important;
+  box-shadow: -4px 0 30px rgba(0,0,0,0.1) !important;
+}
+
+.widget-option {
+  border-radius: 6px !important;
+}
+
+.widget-progress {
+  border-radius: 999px !important;
+}
+
+.widget-badge {
+  border-radius: 4px !important;
+}
+
+.widget-input {
+  border-radius: 4px !important;
+}
+
+.widget-button {
+  border-radius: 4px !important;
+}
+
+.widget-avatar {
+  border-radius: 999px !important;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hero responsive : réduction drastique sur petits écrans */
+@media (max-height: 800px) {
+  .hero-compact h1 {
+    font-size: 2.5rem !important;
+  }
+  .hero-compact p {
+    font-size: 1.1rem !important;
+  }
 }

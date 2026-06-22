@@ -49,7 +49,7 @@ export default function Expertises() {
   ];
 
   return (
-    <section id="expertises" className="py-32 bg-ivory">
+    <section id="expertises" className="py-32 bg-[#F3F1EC]">
       <div className="px-gutter max-w-[1440px] mx-auto">
         <div className="mb-20">
           <h2 className="font-sora text-4xl md:text-5xl uppercase mb-6 text-petrol">
@@ -66,7 +66,7 @@ export default function Expertises() {
                 onClick={() => setActiveTab(index)}
                 className={`w-full text-left p-6 border transition-all duration-300 ${
                   activeTab === index
-                    ? "border-gold bg-white"
+                    ? "border-gold bg-[#F3F1EC]"
                     : "border-petrol/10 hover:border-petrol/30"
                 }`}
               >
@@ -85,7 +85,7 @@ export default function Expertises() {
           </div>
 
           <div className="lg:col-span-8">
-            <div className="border border-petrol/15 bg-white p-12 h-full">
+            <div className="border border-petrol/15 bg-[#F3F1EC] p-12 h-full">
               <p className="font-manrope text-lg text-muted mb-10 leading-relaxed">
                 {expertises[activeTab].description}
               </p>

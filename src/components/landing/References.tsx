@@ -14,7 +14,7 @@ const references = [
 
 export default function References() {
   return (
-    <section className="py-32 bg-ivory">
+    <section className="py-32 bg-[#F3F1EC]">
       <div className="px-gutter max-w-[1440px] mx-auto">
         <div className="mb-20 text-center">
           <h2 className="font-sora text-4xl md:text-5xl uppercase mb-6 text-petrol">
@@ -28,9 +28,9 @@ export default function References() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-petrol/10">
           {references.map((ref) => (
-            <div 
+            <div
               key={ref.name}
-              className="bg-ivory p-8 flex flex-col items-center justify-center gap-4 hover:bg-white transition-standard group cursor-pointer"
+              className="bg-[#F3F1EC] p-8 flex flex-col items-center justify-center gap-4 hover:bg-[#E8E4DC] transition-standard group cursor-pointer"
             >
               <div className="w-20 h-20 bg-petrol/5 flex items-center justify-center group-hover:bg-gold/10 transition-standard">
                 <span className="font-sora text-2xl text-petrol/30 group-hover:text-gold transition-standard">

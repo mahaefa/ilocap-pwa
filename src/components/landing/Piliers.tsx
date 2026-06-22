@@ -1,6 +1,6 @@
 const piliers = [
   {
-    icon: "◈",
+    icon: "◆",
     title: "SENS",
     description: "Redefinir l'intention derriere chaque action technologique pour aligner vision metier et execution technique.",
   },
@@ -18,7 +18,7 @@ const piliers = [
 
 export default function Piliers() {
   return (
-    <section className="py-32 bg-white relative">
+    <section className="py-32 bg-[#F3F1EC] relative">
       <div className="px-gutter max-w-[1440px] mx-auto">
         <div className="mb-20">
           <h2 className="font-sora text-4xl md:text-5xl uppercase mb-6 text-petrol">
@@ -26,12 +26,12 @@ export default function Piliers() {
           </h2>
           <div className="h-[2px] w-32 bg-gold" />
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-petrol/15">
           {piliers.map((pilier, index) => (
-            <div 
+            <div
               key={pilier.title}
-              className={`p-16 hover:bg-ivory transition-standard group ${
+              className={`p-16 hover:bg-[#E8E4DC] transition-standard group ${
                 index < 2 ? "border-b md:border-b-0 md:border-r border-petrol/15" : ""
               }`}
             >

@@ -1,25 +1,31 @@
-import Header from "@/components/shared/Header";
-import Footer from "@/components/shared/Footer";
 import Hero from "@/components/landing/Hero";
+import Methodologie from "@/components/landing/Methodologie";
 import Piliers from "@/components/landing/Piliers";
 import Expertises from "@/components/landing/Expertises";
-import Methodologie from "@/components/landing/Methodologie";
-import ImageSection from "@/components/landing/ImageSection";
 import References from "@/components/landing/References";
 import CTAFinal from "@/components/landing/CTAFinal";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
+import CookieBanner from "@/components/shared/CookieBanner";
+import FloatingCTA from "@/components/shared/FloatingCTA";
+import SocialFloat from "@/components/shared/SocialFloat";
 
 export default function Home() {
   return (
-    <main className="bg-ivory text-petrol">
+    <>
       <Header />
-      <Hero />
-      <Piliers />
-      <Expertises />
-      <Methodologie />
-      <ImageSection />
-      <References />
-      <CTAFinal />
+      <main className="bg-[#F3F1EC]">
+        <Hero />
+        <Methodologie />
+        <Piliers />
+        <Expertises />
+        <References />
+        <CTAFinal />
+      </main>
       <Footer />
-    </main>
+      <FloatingCTA />
+      <SocialFloat />
+      <CookieBanner />
+    </>
   );
 }
