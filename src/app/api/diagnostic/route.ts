@@ -1,23 +1,29 @@
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-console.log("API Diagnostic loaded");
-console.log("NEXT_PUBLIC_SUPABASE_URL exists:", !!process.env.NEXT_PUBLIC_SUPABASE_URL);
-console.log("SERVICE_ROLE exists:", !!process.env.SUPABASE_SERVICE_ROLE_KEY);
-console.log("RESEND_KEY exists:", !!process.env.RESEND_API_KEY);
+// Les clients sont instanciés dans le handler pour éviter
+// les erreurs au build quand les variables d'env sont absentes
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
-const resendKey = process.env.RESEND_API_KEY || "";
-
-if (!supabaseUrl || !serviceRoleKey) {
-  console.error("ERREUR: Variables Supabase manquantes !");
-}
-
-const supabase = createClient(supabaseUrl, serviceRoleKey);
-const resend = new Resend(resendKey);
+// Force le rendu dynamique : cette route ne doit pas être exécutée au build
+export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
+  // Instanciation ici : les variables sont lues au runtime, pas au build
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+  const resendKey = process.env.RESEND_API_KEY || "";
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    console.error("ERREUR: Variables Supabase manquantes !");
+    return Response.json(
+      { success: false, error: "Configuration serveur manquante" },
+      { status: 500 }
+    );
+  }
+
+  const supabase = createClient(supabaseUrl, serviceRoleKey);
+  const resend = new Resend(resendKey);
+
   console.log("API Diagnostic POST received");
   
   try {
