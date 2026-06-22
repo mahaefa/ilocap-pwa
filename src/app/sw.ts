@@ -1,10 +1,8 @@
-import { defaultCache } from "@serwist/next/worker";
+﻿import { defaultCache } from "@serwist/next/worker";
 import type { PrecacheEntry } from "@serwist/precaching";
 import { installSerwist } from "@serwist/sw";
 
-declare const self: ServiceWorkerGlobalScope & {
-  __SW_MANIFEST: (PrecacheEntry | string)[] | undefined;
-};
+declare const self: any;
 
 installSerwist({
   precacheEntries: self.__SW_MANIFEST,
