@@ -5,7 +5,7 @@ WORKDIR /app
 # Copier uniquement les fichiers de lock pour profiter du cache Docker
 COPY package.json package-lock.json ./
 
-RUN npm ci --frozen-lockfile
+RUN npm install
 
 # ─── Stage 2 : build ─────────────────────────────────────────────────────────
 FROM node:20-alpine AS builder
