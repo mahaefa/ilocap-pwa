@@ -1,0 +1,18 @@
+services:
+  ilocap-pwa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Passer les variables publiques Supabase au build
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    container_name: ilocap-pwa
+    ports:
+      - "8520:3000"   # hôte:conteneur — changer le premier chiffre pour un autre port hôte
+    environment:
+      NODE_ENV: production
+      # Variables runtime (secrets côté serveur, non embarqués dans l'image)
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+      RESEND_API_KEY: ${RESEND_API_KEY}
+    restart: unless-stopped

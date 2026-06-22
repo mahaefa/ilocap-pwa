@@ -1,0 +1,30 @@
+# Dépendances (réinstallées dans le conteneur)
+node_modules
+npm-debug.log*
+
+# Build Next.js
+.next
+out
+build
+
+# Fichiers Git
+.git
+.gitignore
+
+# Variables d'environnement (ne jamais embarquer dans l'image)
+.env
+.env.*
+
+# Éditeurs / OS
+.DS_Store
+*.pem
+*.tsbuildinfo
+
+# Docker lui-même
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Docs / scripts locaux
+README.md
+scripts

@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 import withSerwist from "@serwist/next";
 
 const nextConfig: NextConfig = {
+  // Génère un dossier .next/standalone autonome (requis pour Docker)
+  output: "standalone",
   eslint: {
     ignoreDuringBuilds: true, // ← AJOUTÉ
   },
